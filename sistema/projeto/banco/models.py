@@ -52,7 +52,7 @@ class Questionario(models.Model):
 
 class Questao(models.Model):
 	questionario = models.ForeignKey(Questionario)
-	descricao = models.CharField(max_length=1000)
+	descricao = models.TextField(max_length=1000)
 	titulo = models.CharField(max_length=200)
 	def __unicode__(self):
 		return self.titulo

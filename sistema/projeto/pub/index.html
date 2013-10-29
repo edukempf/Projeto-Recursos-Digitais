@@ -1,0 +1,13 @@
+<head></head>
+<body>
+	<h1>Welcome</h1>
+	{% if lista_disciplina %}
+    		<ul>
+    			{% for disciplina in lista_disciplina %}
+        			<li><a href="{% url 'questionarios' disciplina.id %}">{{ disciplina.nome }}</a></li>
+    			{% endfor %}
+    		</ul>
+	{% else %}
+    		<p>Sem disciplinas cadastradas</p>
+	{% endif %}
+</body>

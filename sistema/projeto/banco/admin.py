@@ -1,4 +1,4 @@
-from projeto.banco.models import *
+from banco.models import *
 from django.contrib import admin
 
 #class TesteInline(admin.TabularInline):

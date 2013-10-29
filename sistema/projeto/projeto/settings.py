@@ -1,5 +1,5 @@
 # Django settings for projeto project.
-
+# coding: utf-8
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -111,6 +111,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+	'/home/kempf/Documentos/Projeto/sistema/projeto/pub',#mudar esse endereço quando mudar o computador.
 )
 
 INSTALLED_APPS = (
@@ -120,7 +121,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'projeto.banco',
+    'banco',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

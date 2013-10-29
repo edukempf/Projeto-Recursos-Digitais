@@ -1,0 +1,13 @@
+<head></head>
+<body>
+	<h1>Questionarios</h1>
+	{% if lista_questionarios %}
+    		<ul>
+    			{% for questionario in lista_questionarios %}
+        			<li><a href="{% url 'questoes' questionario.id %}">{{ questionario.titulo }}</a></li>
+    			{% endfor %}
+    		</ul>
+	{% else %}
+    		<p>Sem questionarios cadastrados</p>
+	{% endif %}
+</body>

@@ -1,0 +1,16 @@
+<head></head>
+<body>
+	<h1>Questoes</h1>
+	{% if lista_questoes %}
+    		<ul>
+    			{% for questao in lista_questoes %}
+        			<p>{{ questao.titulo }}</p>
+				<p>{{ questao.descricao }}</p>
+				<br />
+				<br />
+    			{% endfor %}
+    		</ul>
+	{% else %}
+    		<p>Sem questoes cadastradas</p>
+	{% endif %}
+</body>
