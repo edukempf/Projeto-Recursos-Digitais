@@ -1,0 +1,12 @@
+<head></head>
+<body>
+	<h1>Welcome</h1>
+	<form method="POST">
+    		{% csrf_token %}
+    		{{ form.as_p }}
+    	<input type='submit' value='Logar' />
+	{% if msg_saiu %}
+		<p>Você saiu!</p>
+	{% endif %}
+</form>
+</body>

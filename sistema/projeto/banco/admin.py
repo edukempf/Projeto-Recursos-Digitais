@@ -1,8 +1,9 @@
 from banco.models import *
 from django.contrib import admin
+from django.contrib.auth.models import User
 
-#class TesteInline(admin.TabularInline):
-#	model = Disciplina.participantes.through
+class UserInline(admin.TabularInline):
+	model = User
 
 #class AlunoAdmin(admin.ModelAdmin):
 #	inlines = {
@@ -18,6 +19,11 @@ class DisciplinaAdmin(admin.ModelAdmin):
 
 class CursoAdmin(admin.ModelAdmin):
 	filter_horizontal = ('professores',)
+
+class AlunoAdmin(admin.ModelAdmin):
+	inlines = {
+		UserInline,	
+	}
 
 admin.site.register(Professor)
 admin.site.register(Curso, CursoAdmin)

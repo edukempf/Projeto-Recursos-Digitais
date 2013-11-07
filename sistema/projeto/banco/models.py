@@ -1,4 +1,6 @@
+from django.db.models.signals import post_save
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Professor(models.Model):
@@ -16,11 +18,18 @@ class Curso(models.Model):
 		return self.nome
 
 class Aluno(models.Model):
+	user = models.OneToOneField(User)
 	nome = models.CharField(max_length=100)
 	codigo = models.CharField(max_length=25)
 	email = models.EmailField(max_length=100)
 	def __unicode__(self):
 		return self.nome
+
+#def create_user_aluno(sender, instance, created, **kwargs):
+ #   if created:
+ #       Aluno.objects.create(user=instance)
+
+#post_save.connect(create_user_aluno, sender=User)
 
 class Disciplina(models.Model):
 	nome = models.CharField(max_length=100)

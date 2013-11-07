@@ -3,6 +3,10 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+#AUTH_PROFILE_MODULE = 'banco.UserProfile'
+
+LOGIN_URL = '/banco/login/'
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -111,7 +115,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-	'/home/kempf/Documentos/Projeto/sistema/projeto/pub',#mudar esse endereço quando mudar o computador.
+	'/home/kempf/Projeto-Recursos-Digitais/sistema/projeto/pub',#mudar esse endereço quando mudar o computador.
 )
 
 INSTALLED_APPS = (
