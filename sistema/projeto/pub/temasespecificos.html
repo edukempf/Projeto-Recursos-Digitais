@@ -32,36 +32,44 @@
 	<script type="text/javascript" src="{{ STATIC_URL }}js/scripts.js"></script>
 </head>
 <body>
-
-
-<div class="container">
+	<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<img class="minlogo" alt="140x140" src="{{ STATIC_URL }}img/utfpr.png" />
-		</div>
-	</div>
-	<div class="row clearfix">
-		<div class="col-md-6 column">
-			<img class="quest" alt="140x140" src="{{ STATIC_URL }}img/Questionario.jpg" />
-		</div>
-		<div class="col-md-6 column">
-			<h3 class="text-center">
-				Informe seus dados
-			</h3>
-			<form role="form" method="POST">
-				{% csrf_token %}
-				<div class="form-group">
-					 <label>Usuário</label><input id="id_username" maxlength="254" name="username" type="text" class="form-control">
+			<img class="logo2" alt="140x140" src="{{ STATIC_URL }}img/utfpr.png" />
+			<div class="btn-group">
+				 <button class="btn btn-default">Opções</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="{% url 'sair' %}">Sair</a>
+					</li>
+					<li class="disabled">
+						<a href="#">Another action</a>
+					</li>
+				</ul>
+			</div>
+			<div class="row clearfix">
+				<div class="col-md-4 column">
 				</div>
-				<div class="form-group">
-					 <label>Senha</label><input id="id_password" name="password" type="password" class="form-control">
+				<div class="col-md-4 column">
+					<div class="list-group">
+						 <a class="list-group-item active">Escolha o tema da questão</a>
+						{% if lista_temas %}
+							{% for tema in lista_temas %}
+								<div class="list-group-item">
+        								<a href="{% url 'questao' tema.id %}">{{ tema.descricao }}</a>			
+								</div>
+    							{% endfor %}
+						{% else %}
+    							<div class="list-group-item">Sem temas especificos cadastrados</div>
+						{% endif %}	
+								
+						 <a class="list-group-item active"></a>	
+					</div>
 				</div>
-
-				<div class="checkbox">
-				</div> <button type="submit" class="btn btn-default">Logar</button>
-			</form>
+				<div class="col-md-4 column">
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
-
 </body>

@@ -1,0 +1,32 @@
+.logo{
+	width:50%;
+	display: block; margin-left: auto; margin-right: auto;
+	margin-bottom:80px;
+	margin-top:80px;
+}
+.logo2{
+	width:25%;
+	height:20%;
+	display: block; margin-left: auto; margin-right: auto;
+	margin-bottom:80px;
+	margin-top:80px;
+}
+.option{
+	display: block; margin-left: auto; margin-right: auto;
+}
+.desc{
+	text-align:center;
+	display:block;
+}
+.minlogo{
+	width:15%;
+	height:15%;
+	margin-bottom:80px;
+	margin-top:20px;
+}
+.quest{
+	display: block; margin-left: auto; margin-right: auto;
+}
+.btn btn-default dropdown-toggle{float:right; margin-right:0;margin-left:10px; margin-bottom:5px;}
+.container{background-color:white;height:100%;}
+body{background-color:gray;}

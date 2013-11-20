@@ -7,6 +7,8 @@ TEMPLATE_DEBUG = DEBUG
 
 LOGIN_URL = '/banco/login/'
 
+
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -76,6 +78,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    '/home/kempf/Projeto-Recursos-Digitais/sistema/projeto/pub/static',
 )
 
 # List of finder classes that know how to find static files in

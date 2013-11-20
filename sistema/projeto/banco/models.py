@@ -44,25 +44,23 @@ class Disciplina(models.Model):
 class Monitor(models.Model):
 	models.ForeignKey(Aluno)
 
+class TipoTema(models.Model):
+	descricao = models.CharField(max_length=200)
+	def __unicode__(self):
+		return self.descricao
 
 class Tema(models.Model):
+	tema = models.ForeignKey(TipoTema)
 	descricao = models.CharField(max_length=200)
 	codigo = models.CharField(max_length=25)
 	def __unicode__(self):
 		return self.codigo
 
-class Questionario(models.Model):
-	tema = models.ForeignKey(Tema)
-	disciplina = models.ForeignKey(Disciplina)
-	num_questoes = models.IntegerField()
-	titulo = models.CharField(max_length=50)
-	def __unicode__(self):
-		return self.titulo
-
 class Questao(models.Model):
-	questionario = models.ForeignKey(Questionario)
+	tema = models.ForeignKey(Tema)
 	descricao = models.TextField(max_length=1000)
 	titulo = models.CharField(max_length=200)
+	dificuldade = models.IntegerField()
 	def __unicode__(self):
 		return self.titulo
 

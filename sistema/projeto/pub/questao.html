@@ -32,36 +32,47 @@
 	<script type="text/javascript" src="{{ STATIC_URL }}js/scripts.js"></script>
 </head>
 <body>
-
-
-<div class="container">
+	<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<img class="minlogo" alt="140x140" src="{{ STATIC_URL }}img/utfpr.png" />
+			<img class="logo2" alt="140x140" src="{{ STATIC_URL }}img/utfpr.png" />
+			<div class="btn-group">
+				 <button class="btn btn-default">Opções</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="{% url 'sair' %}">Sair</a>
+					</li>
+					<li class="disabled">
+						<a href="#">Another action</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<div class="row clearfix">
-		<div class="col-md-6 column">
-			<img class="quest" alt="140x140" src="{{ STATIC_URL }}img/Questionario.jpg" />
-		</div>
-		<div class="col-md-6 column">
-			<h3 class="text-center">
-				Informe seus dados
+		<div class="col-md-12 column">
+		{% if questao %}
+			<h3>
+				{{ questao.titulo }}
 			</h3>
-			<form role="form" method="POST">
-				{% csrf_token %}
+			<dl>
+				<dt>
+					Descrição 
+				</dt>
+				<dd>
+					{{ questao.descricao }}
+				</dd>
+			</dl>
+			<form method="POST" role="form">
 				<div class="form-group">
-					 <label>Usuário</label><input id="id_username" maxlength="254" name="username" type="text" class="form-control">
+					 <label>Resposta:</label><textarea name="resposta" class="form-control" ></textarea>
 				</div>
-				<div class="form-group">
-					 <label>Senha</label><input id="id_password" name="password" type="password" class="form-control">
-				</div>
-
-				<div class="checkbox">
-				</div> <button type="submit" class="btn btn-default">Logar</button>
+				</div> <button type="submit" class="btn btn-default">Submit</button>
 			</form>
 		</div>
+		{% else %}
+    			<p>Sem questoes cadastradas</p>
+		{% endif %}
 	</div>
 </div>
-
 </body>

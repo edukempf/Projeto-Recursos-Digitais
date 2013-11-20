@@ -6,8 +6,8 @@ urlpatterns = patterns('banco.views',
 	url(r'^$', views.index, name='index'),
 	url(r'^login/$', views.login, name='login'),
 	url(r'^sair/$', views.sair, name='sair'),
-	url(r'^minhasdisciplinas/$', login_required(views.disciplinas), name='disciplinas'),
-	url(r'^(?P<disciplina_id>\d+)/$', login_required(views.questionarios), name='questionarios'),
-	url(r'^questionario/(?P<questionario_id>\d+)$', login_required(views.questoes), name='questoes'),
+	url(r'^temas/$', login_required(views.tipo_temas), name='temas'),
+	url(r'^temas/(?P<tipotema_id>\d+)$', login_required(views.temasespecificos), name='temasespecificos'),
+	url(r'^questao/(?P<tema_id>\d+)$', login_required(views.questao), name='questao'),
 
 )
